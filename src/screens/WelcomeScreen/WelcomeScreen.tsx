@@ -1,5 +1,5 @@
 import {useNavigation} from "@react-navigation/native";
-import {Button, Text} from "native-base";
+import {Button, View} from "native-base";
 import React from "react-native";
 import ScreenContainer from "../../components/ScreenContainer/ScreenContainer";
 
@@ -8,15 +8,19 @@ const WelcomeScreen = ({}: Props) => {
   const navigation = useNavigation();
   return (
     <ScreenContainer>
-      <>
-        <Text>Welcome Screen</Text>
+      <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+        }}>
         <Button
           onPress={() => {
             navigation.navigate("Home" as never);
           }}>
           go to home
         </Button>
-      </>
+      </View>
     </ScreenContainer>
   );
 };
